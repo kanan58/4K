@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4k Technology | Immersive Luxury Tech</title>
-    <!-- Tailwind CSS CDN -->
+    <title>4k Technology | Elite Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030305;
+            background-color: #050505;
             overflow-x: hidden;
         }
         #canvas-container {
@@ -27,293 +24,300 @@
             pointer-events: none;
         }
         .glass-card {
-            background: rgba(8, 8, 12, 0.5);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.08);
             transition: border-color 0.4s, box-shadow 0.4s;
         }
         .glass-card:hover {
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(212, 175, 55, 0.05);
         }
-        .text-gradient {
-            background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F3E5AB 50%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .accent-gradient {
-            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #818cf8 100%);
+        .gold-gradient {
+            background: linear-gradient(135deg, #AA7C11 0%, #D4AF37 50%, #F3E5AB 100%);
         }
         /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #030305; }
-        ::-webkit-scrollbar-thumb { background: #1f1f2e; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
         
-        /* Smooth visual reveal states handled by GSAP */
-        .reveal-element { opacity: 0; transform: translateY(40px); }
+        .reveal-element { opacity: 0; transform: translateY(30px); }
     </style>
 </head>
-<body class="text-gray-100 antialiased">
+<body class="text-gray-200 antialiased">
 
-    <!-- 3D Environment Canvas -->
     <div id="canvas-container"></div>
 
-    <!-- Immersive Interactive Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 bg-white/5 z-50">
-        <div id="scroll-progress" class="h-full accent-gradient w-0 transition-all duration-75"></div>
+    <div class="fixed top-0 left-0 w-full h-[2px] bg-white/5 z-50">
+        <div id="scroll-progress" class="h-full gold-gradient w-0"></div>
     </div>
 
-    <!-- UI Overlay and Narrative Sections -->
     <div class="relative z-10 w-full">
         
-        <!-- Luxury Floating Header -->
-        <header class="fixed top-0 left-0 w-full z-40 px-6 py-6 border-b border-white/5 bg-black/10 backdrop-blur-md">
+        <header class="fixed top-0 left-0 w-full z-40 px-6 py-6 border-b border-white/5 bg-black/40 backdrop-blur-xl">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <div class="flex items-center space-x-3 group cursor-pointer">
-                    <div class="h-10 w-10 rounded-xl accent-gradient flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-transform">
-                        <span class="text-white font-bold text-lg tracking-wider">4K</span>
+                    <div class="h-10 w-10 rounded-xl gold-gradient flex items-center justify-center shadow-lg shadow-yellow-600/10">
+                        <span class="text-black font-bold text-lg tracking-wider">4K</span>
                     </div>
-                    <span class="text-white font-semibold text-xl tracking-tight">4k Technology</span>
+                    <span class="text-white font-semibold text-xl tracking-tight transition-colors group-hover:text-[#D4AF37]">4k Technology</span>
                 </div>
-                <a href="tel:+251921101333" class="glass-card px-5 py-2.5 rounded-full text-sm font-medium tracking-wide text-indigo-300 hover:text-white flex items-center gap-2 transition-all">
-                    <i class="fa-solid fa-phone text-xs animate-pulse"></i> Connect Directly
+                <a href="tel:+251921101333" class="glass-card px-5 py-2.5 rounded-full text-sm font-medium tracking-wide text-[#F3E5AB] hover:text-white flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-phone text-xs animate-pulse text-[#D4AF37]"></i> Contact Expert
                 </a>
             </div>
         </header>
 
-        <!-- Chapter 1: The Intro (Hero) -->
-        <section class="min-h-screen flex flex-col justify-center px-6 pt-32 max-w-7xl mx-auto relative">
-            <div class="max-w-4xl" id="hero-content">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium uppercase tracking-widest mb-8">
-                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span> Visual Chapter I: Elite Frameworks
+        <section class="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 pt-32 max-w-7xl mx-auto gap-12 relative">
+            
+            <div class="max-w-2xl lg:w-1/2" id="hero-text">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/5 border border-[#D4AF37]/20 text-[#F3E5AB] text-xs font-medium uppercase tracking-widest mb-8">
+                    <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping"></span> Visual Transformation Pipeline
                 </div>
-                <h1 class="text-5xl md:text-8xl font-bold tracking-tight text-gradient mb-8 leading-none">
-                    Next-Gen Ecosystems,<br><span class="text-indigo-400 font-extralight italic">Architected.</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gold-gradient mb-8 leading-none">
+                    Next-Gen Tech.<br><span class="font-extralight italic text-gray-400">Sustainable Future.</span>
                 </h1>
-                <p class="text-xl text-gray-400 font-light max-w-2xl leading-relaxed mb-12">
-                    We push the limits of interactive software. 4k Technology constructs high-performance code built for the ultimate visual and technical standard.
+                <p class="text-lg text-gray-400 font-light max-w-xl leading-relaxed mb-10">
+                    4k Technology engineers bespoke applications, high-performance web systems, and custom workflow tracking networks built for absolute precision.
                 </p>
                 <div class="flex items-center gap-3 text-sm text-gray-500 tracking-widest uppercase">
-                    <span>Scroll to explore</span>
-                    <i class="fa-solid fa-arrow-down-long animate-bounce text-indigo-400"></i>
+                    <span>Scroll to observe transformation</span>
+                    <i class="fa-solid fa-arrow-down-long animate-bounce text-[#D4AF37]"></i>
                 </div>
             </div>
+
+            <div class="lg:w-1/2 flex items-center justify-center relative w-full h-[450px] lg:h-[600px]" id="interactive-graphic-container">
+                <div id="rotating-frame" class="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] flex items-center justify-center">
+                    
+                    <img id="robot-img" src="robot.jpg" alt="Technology Model" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-20">
+                    
+                    <img id="tree-img" src="tree.jpg" alt="Sustainable Ecosystem" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10 opacity-0">
+                    
+                    <div class="absolute inset-0 border border-[#D4AF37]/20 rounded-full scale-110 pointer-events-none"></div>
+                </div>
+            </div>
+
         </section>
 
-        <!-- Chapter 2: The Core Services (Immersive Storytelling Grid) -->
         <section class="min-h-screen flex flex-col justify-center px-6 py-24 max-w-7xl mx-auto relative">
             <div class="mb-16 reveal-element">
-                <span class="text-xs font-semibold uppercase tracking-widest text-indigo-400 block mb-3">// Chapter II: Capabilities</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Engineered Solutions.</h2>
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block mb-3">// Architectural Capabilities</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Services Given.</h2>
             </div>
 
-            <!-- Parallax Interactive Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Card 1 -->
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element cursor-pointer">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-mobile-screen-button text-xl text-indigo-400"></i>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen text-xl text-[#D4AF37]"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Application Suites</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">High-velocity iOS and Android applications forged with modern, scalable codebases.</p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Build App</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Native and cross-platform architecture configured to premium enterprise standards.</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element cursor-pointer">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-globe text-xl text-indigo-400"></i>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code text-xl text-[#D4AF37]"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Luxury Web Platforms</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">Immersive web architectures combining blinding processing speed with high-end aesthetic designs.</p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Build Website</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">High-velocity responsive cloud infrastructure coupled with modern layouts.</p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element cursor-pointer">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-sliders text-xl text-indigo-400"></i>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired text-xl text-[#D4AF37]"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Workflow Automation</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">Deploying complex monitoring networks and intelligent pipeline instrumentation for corporations.</p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Tracking Workflow</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Installing absolute operational visibility via end-to-end telemetry system pipelines.</p>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element cursor-pointer">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-display text-xl text-indigo-400"></i>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chalkboard-user text-xl text-[#D4AF37]"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Technical Training</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">Injecting masterclass expertise to engineering squads on design philosophy and cloud operations.</p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Website Training</h3>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Comprehensive knowledge transfers and professional framework mastery updates.</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- Chapter 3: The Directive (Closing & Contact) -->
         <section class="min-h-screen flex flex-col justify-center px-6 py-24 max-w-7xl mx-auto relative">
             <div class="w-full glass-card p-8 md:p-16 rounded-3xl relative overflow-hidden reveal-element">
-                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none"></div>
                 
                 <div class="max-w-2xl">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-indigo-400 block mb-4">// Chapter III: Authorization</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">Eng. Kufa Kedir</h2>
-                    <p class="text-indigo-300 font-medium text-sm tracking-wide mb-6 uppercase">Principal Director & Lead Architect</p>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block mb-4">// System Administration</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-3">Eng. Kufa Kedir</h2>
+                    <p class="text-[#F3E5AB] font-medium text-sm tracking-widest mb-8 uppercase">Founder & Principal Owner</p>
                     <p class="text-gray-400 font-light leading-relaxed mb-10">
-                        Available for elite enterprise architecture consultancies, structural application planning, and deep infrastructure deployment workflows worldwide.
+                        Overseeing premium technological installations, secure database implementations, and luxury cross-platform design suites.
                     </p>
                     
-                    <a href="tel:+251921101333" class="inline-flex items-center gap-4 accent-gradient hover:opacity-90 text-white text-base font-semibold px-8 py-5 rounded-xl shadow-xl shadow-indigo-600/20 transition-all transform hover:-translate-y-1">
-                        <i class="fa-solid fa-phone"></i> Initialize Call: +251 921 101 333
+                    <a href="tel:+251921101333" class="inline-flex items-center gap-4 gold-gradient hover:opacity-90 text-black text-base font-bold px-8 py-5 rounded-xl shadow-xl shadow-yellow-600/10 transition-all transform hover:-translate-y-1">
+                        <i class="fa-solid fa-phone"></i> Call: +251 921 101 333
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Premium Footer -->
         <footer class="w-full max-w-7xl mx-auto px-6 py-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-light">
             <p>&copy; 2026 4k Technology. All Rights Reserved.</p>
-            <p class="tracking-wide">Engineered by Eng. Kufa Kedir</p>
+            <p class="tracking-widest uppercase">Engineered for Luxury Standard</p>
         </footer>
 
     </div>
 
-    <!-- Core Animation Dependencies (Three.js + GSAP) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- 3D Parallax & Kinetic Flow Engine -->
     <script>
-        // Register GSAP ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
 
-        let scene, camera, renderer, particles, linesMesh;
+        let scene, camera, renderer, goldParticles;
         const container = document.getElementById('canvas-container');
-        const particleCount = 250;
 
-        function init3DEngine() {
+        function initPerformanceLayout() {
             scene = new THREE.Scene();
-            
-            camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 45;
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 50;
 
             renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             container.appendChild(renderer.domElement);
 
-            // Generate Constellation Nodes
+            const particleCount = 200;
             const geometry = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
 
-            for (let i = 0; i < particleCount * 3; i += 3) {
-                positions[i] = (Math.random() - 0.5) * 120;
-                positions[i + 1] = (Math.random() - 0.5) * 120;
-                positions[i + 2] = (Math.random() - 0.5) * 80;
+            for(let i=0; i<particleCount*3; i+=3) {
+                positions[i] = (Math.random() - 0.5) * 130;
+                positions[i+1] = (Math.random() - 0.5) * 130;
+                positions[i+2] = (Math.random() - 0.5) * 90;
             }
-
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-            // Premium Visual Node Material
             const material = new THREE.PointsMaterial({
-                color: 0x6366f1,
-                size: 0.35,
+                color: 0xD4AF37, 
+                size: 0.3,
                 transparent: true,
-                opacity: 0.8,
+                opacity: 0.5,
                 blending: THREE.AdditiveBlending
             });
 
-            particles = new THREE.Points(geometry, material);
-            scene.add(particles);
+            goldParticles = new THREE.Points(geometry, material);
+            scene.add(goldParticles);
 
-            // Adaptive Listeners
-            window.addEventListener('resize', onWindowResize);
-            document.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('resize', onResizeWindow);
+            document.addEventListener('mousemove', onMoveMouse);
 
-            animate();
-            initScrollAnimations();
+            animateLoop();
+            initLuxuryScrollEngine();
         }
 
-        // Mouse Parallax Values
-        let targetMouseX = 0, targetMouseY = 0;
-        let currentMouseX = 0, currentMouseY = 0;
-
-        function onMouseMove(event) {
-            targetMouseX = (event.clientX - window.innerWidth / 2) * 0.015;
-            targetMouseY = (event.clientY - window.innerHeight / 2) * 0.015;
+        let mouseX = 0, mouseY = 0;
+        function onMoveMouse(e) {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.01;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.01;
         }
 
-        function onWindowResize() {
+        function onResizeWindow() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         }
 
-        // Immersive Scroll and Cinematic Text Storytelling Transitions
-        function initScrollAnimations() {
-            // Live indicator progress tracking
+        function initLuxuryScrollEngine() {
             window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                document.getElementById('scroll-progress').style.width = scrolled + '%';
+                const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                if(totalScroll > 0) {
+                    const progress = (window.scrollY / totalScroll) * 100;
+                    document.getElementById('scroll-progress').style.width = `${progress}%`;
+                }
             });
 
-            // Hero content parallax exit
-            gsap.to("#hero-content", {
+            // Controlled smooth trailing rotation on scroll
+            gsap.to("#rotating-frame", {
                 scrollTrigger: {
-                    trigger: "#hero-content",
+                    trigger: "#interactive-graphic-container",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1 
+                },
+                rotation: 45, 
+                ease: "none"
+            });
+
+            // cross-fade transformation tracking
+            gsap.to("#robot-img", {
+                scrollTrigger: {
+                    trigger: "#interactive-graphic-container",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                },
+                opacity: 0
+            });
+
+            gsap.to("#tree-img", {
+                scrollTrigger: {
+                    trigger: "#interactive-graphic-container",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                },
+                opacity: 1
+            });
+
+            gsap.to("#hero-text", {
+                scrollTrigger: {
+                    trigger: "#hero-text",
                     start: "top center",
                     end: "bottom top",
                     scrub: true
                 },
-                y: -100,
-                opacity: 0,
-                scale: 0.95
+                y: -60,
+                opacity: 0.3
             });
 
-            // Trigger elegant cinematic arrivals for all content modules
-            gsap.utils.toArray('.reveal-element').forEach((element) => {
-                gsap.to(element, {
+            gsap.utils.toArray('.reveal-element').forEach((el) => {
+                gsap.to(el, {
                     scrollTrigger: {
-                        trigger: element,
-                        start: "top 85%",
+                        trigger: el,
+                        start: "top 88%",
                         toggleActions: "play none none reverse"
                     },
                     opacity: 1,
                     y: 0,
-                    duration: 1.2,
-                    ease: "power4.out"
+                    duration: 1.4,
+                    ease: "power3.out"
                 });
             });
         }
 
-        // Master Frame Animation Loop
-        function animate() {
-            requestAnimationFrame(animate);
+        function animateLoop() {
+            requestAnimationFrame(animateLoop);
 
-            // Constant elegant micro-motion
-            particles.rotation.x += 0.0004;
-            particles.rotation.y += 0.0006;
+            goldParticles.rotation.x += 0.0003;
+            goldParticles.rotation.y += 0.0005;
 
-            // Interpolated mouse movement (Smooth damping effect)
-            currentMouseX += (targetMouseX - currentMouseX) * 0.05;
-            currentMouseY += (targetMouseY - currentMouseY) * 0.05;
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
 
-            // Scroll-linked cinematic deep zoom (3D Scroll Effect)
-            const scrollY = window.scrollY;
-            camera.position.z = 45 - (scrollY * 0.015);
-            camera.position.x = currentMouseX + (scrollY * 0.005);
-            camera.position.y = -currentMouseY - (scrollY * 0.005);
-            
             camera.lookAt(scene.position);
             renderer.render(scene, camera);
         }
 
-        // Boot 3D Engine on DOM confirmation
-        window.addEventListener('DOMContentLoaded', init3DEngine);
+        window.addEventListener('DOMContentLoaded', initPerformanceLayout);
     </script>
 </body>
 </html>
