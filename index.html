@@ -42,6 +42,22 @@
         .gold-gradient {
             background: linear-gradient(135deg, #AA7C11 0%, #D4AF37 50%, #F3E5AB 100%);
         }
+        
+        /* Metallic Chrome Text Gradient */
+        .text-metallic-chrome {
+            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 40%, #94A3B8 60%, #64748B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Grass Green Text Gradient */
+        .text-grass-green {
+            background: linear-gradient(135deg, #4ADE80 0%, #22C55E 50%, #15803D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
@@ -78,9 +94,15 @@
         <section class="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 pt-32 max-w-7xl mx-auto gap-12 relative">
             
             <div class="max-w-2xl lg:w-1/2" id="hero-text">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/5 border border-[#D4AF37]/20 text-[#F3E5AB] text-xs font-medium uppercase tracking-widest mb-8">
-                    <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping"></span> Visual Transformation Pipeline
+                <div class="flex flex-col gap-1 mb-6">
+                    <span class="text-sm font-bold uppercase tracking-widest text-metallic-chrome w-fit">
+                        <i class="fa-solid fa-gear animate-spin text-gray-400 mr-1 text-xs"></i> // METALLIC ROBOT
+                    </span>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-grass-green w-fit">
+                        <i class="fa-solid fa-leaf text-green-500 mr-1 text-[10px]"></i> GREEN LIKE GRASS
+                    </span>
                 </div>
+                
                 <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gold-gradient mb-8 leading-none">
                     Next-Gen Tech.<br><span class="font-extralight italic text-gray-400">Sustainable Future.</span>
                 </h1>
@@ -257,7 +279,7 @@
                 ease: "none"
             });
 
-            // Cross-fade animations for .png assets
+            // Cross-fade animations for assets
             gsap.to("#robot-img", {
                 scrollTrigger: {
                     trigger: "#interactive-graphic-container",
