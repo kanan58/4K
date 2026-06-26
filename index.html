@@ -6,7 +6,7 @@
     <title>4k Technology | Elite Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -23,46 +23,68 @@
             z-index: 1;
             pointer-events: none;
         }
-        .glass-card {
-            background: rgba(10, 10, 10, 0.75);
+        
+        /* Metallic Chrome Card Themes */
+        .glass-card-metallic {
+            background: rgba(15, 15, 20, 0.75);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: border-color 0.4s, box-shadow 0.4s;
         }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(212, 175, 55, 0.05);
+        .glass-card-metallic:hover {
+            border-color: rgba(203, 213, 225, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F3E5AB 50%, #D4AF37 100%);
+
+        /* Grass Green Card Themes */
+        .glass-card-green {
+            background: rgba(10, 15, 10, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(34, 197, 94, 0.08);
+            transition: border-color 0.4s, box-shadow 0.4s;
+        }
+        .glass-card-green:hover {
+            border-color: rgba(74, 222, 128, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(34, 197, 94, 0.05);
+        }
+
+        /* Metallic Robot Text Gradients */
+        .text-metallic-title {
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 30%, #94A3B8 70%, #475569 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-gradient {
-            background: linear-gradient(135deg, #AA7C11 0%, #D4AF37 50%, #F3E5AB 100%);
-        }
-        
-        /* Metallic Chrome Text Gradient */
         .text-metallic-chrome {
-            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 40%, #94A3B8 60%, #64748B 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 50%, #64748B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+        }
+        .metallic-gradient {
+            background: linear-gradient(135deg, #475569 0%, #94A3B8 50%, #F8FAFC 100%);
         }
         
-        /* Grass Green Text Gradient */
-        .text-grass-green {
-            background: linear-gradient(135deg, #4ADE80 0%, #22C55E 50%, #15803D 100%);
+        /* Grass Green Text Gradients */
+        .text-grass-title {
+            background: linear-gradient(135deg, #F0FDF4 0%, #4ADE80 40%, #22C55E 70%, #166534 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .text-grass-green {
+            background: linear-gradient(135deg, #86EFAC 0%, #22C55E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .grass-gradient {
+            background: linear-gradient(135deg, #15803D 0%, #22C55E 50%, #86EFAC 100%);
         }
 
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        ::-webkit-scrollbar-thumb:hover { background: #22C55E; }
         
         .reveal-element { opacity: 0; transform: translateY(30px); }
     </style>
@@ -72,7 +94,7 @@
     <div id="canvas-container"></div>
 
     <div class="fixed top-0 left-0 w-full h-[2px] bg-white/5 z-50">
-        <div id="scroll-progress" class="h-full gold-gradient w-0"></div>
+        <div id="scroll-progress" class="h-full metallic-gradient w-0"></div>
     </div>
 
     <div class="relative z-10 w-full">
@@ -80,13 +102,13 @@
         <header class="fixed top-0 left-0 w-full z-40 px-6 py-6 border-b border-white/5 bg-black/40 backdrop-blur-xl">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <div class="flex items-center space-x-3 group cursor-pointer">
-                    <div class="h-10 w-10 rounded-xl gold-gradient flex items-center justify-center shadow-lg shadow-yellow-600/10">
+                    <div id="logo-badge" class="h-10 w-10 rounded-xl metallic-gradient flex items-center justify-center shadow-lg shadow-blue-900/10 transition-all duration-500">
                         <span class="text-black font-bold text-lg tracking-wider">4K</span>
                     </div>
-                    <span class="text-white font-semibold text-xl tracking-tight transition-colors group-hover:text-[#D4AF37]">4k Technology</span>
+                    <span class="text-white font-semibold text-xl tracking-tight transition-colors group-hover:text-[#CBD5E1]">4k Technology</span>
                 </div>
-                <a href="tel:+251921101333" class="glass-card px-5 py-2.5 rounded-full text-sm font-medium tracking-wide text-[#F3E5AB] hover:text-white flex items-center gap-2 transition-all">
-                    <i class="fa-solid fa-phone text-xs animate-pulse text-[#D4AF37]"></i> Contact Expert
+                <a href="tel:+251921101333" id="contact-btn" class="glass-card-metallic px-5 py-2.5 rounded-full text-sm font-medium tracking-wide text-slate-300 hover:text-white flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-phone text-xs animate-pulse text-slate-400"></i> Contact Expert
                 </a>
             </div>
         </header>
@@ -94,24 +116,18 @@
         <section class="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 pt-32 max-w-7xl mx-auto gap-12 relative">
             
             <div class="max-w-2xl lg:w-1/2" id="hero-text">
-                <div class="flex flex-col gap-1 mb-6">
-                    <span class="text-sm font-bold uppercase tracking-widest text-metallic-chrome w-fit">
-                        <i class="fa-solid fa-gear animate-spin text-gray-400 mr-1 text-xs"></i> // METALLIC ROBOT
-                    </span>
-                    <span class="text-xs font-semibold uppercase tracking-widest text-grass-green w-fit">
-                        <i class="fa-solid fa-leaf text-green-500 mr-1 text-[10px]"></i> GREEN LIKE GRASS
-                    </span>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-medium uppercase tracking-widest mb-8">
+                    <span class="w-2 h-2 rounded-full bg-slate-400 animate-ping"></span> Cybernetic System Infrastructure
                 </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gold-gradient mb-8 leading-none">
-                    Next-Gen Tech.<br><span class="font-extralight italic text-gray-400">Sustainable Future.</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-metallic-title mb-8 leading-none">
+                    Next-Gen Tech.<br><span class="font-extralight italic text-slate-400">Sustainable Future.</span>
                 </h1>
-                <p class="text-lg text-gray-400 font-light max-w-xl leading-relaxed mb-10">
+                <p class="text-lg text-slate-400 font-light max-w-xl leading-relaxed mb-10">
                     4k Technology engineers bespoke applications, high-performance web systems, and custom workflow tracking networks built for absolute precision.
                 </p>
-                <div class="flex items-center gap-3 text-sm text-gray-500 tracking-widest uppercase">
-                    <span>Scroll to observe transformation</span>
-                    <i class="fa-solid fa-arrow-down-long animate-bounce text-[#D4AF37]"></i>
+                <div class="flex items-center gap-3 text-sm text-slate-500 tracking-widest uppercase">
+                    <span class="text-metallic-chrome font-medium">Scroll to observe transformation</span>
+                    <i class="fa-solid fa-arrow-down-long animate-bounce text-slate-400"></i>
                 </div>
             </div>
 
@@ -122,7 +138,7 @@
                     
                     <img id="tree-img" src="tree.png" alt="Sustainable Ecosystem" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10 opacity-0">
                     
-                    <div class="absolute inset-0 border border-[#D4AF37]/20 rounded-full scale-110 pointer-events-none"></div>
+                    <div id="graphic-ring" class="absolute inset-0 border border-white/10 rounded-full scale-110 pointer-events-none transition-colors duration-500"></div>
                 </div>
             </div>
 
@@ -130,60 +146,60 @@
 
         <section class="min-h-screen flex flex-col justify-center px-6 py-24 max-w-7xl mx-auto relative">
             <div class="mb-16 reveal-element">
-                <span class="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block mb-3">// Architectural Capabilities</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Services Given.</h2>
+                <span class="text-xs font-semibold uppercase tracking-widest text-green-400 block mb-3">// Architectural Capabilities</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-grass-title tracking-tight">Services Given.</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
-                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-mobile-screen text-xl text-[#D4AF37]"></i>
+                <div class="glass-card-green p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen text-xl text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-4">Build App</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">Native and cross-platform architecture configured to premium enterprise standards.</p>
+                    <p class="text-sm text-green-100/60 font-light leading-relaxed">Native and cross-platform architecture configured to premium enterprise standards.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
-                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-code text-xl text-[#D4AF37]"></i>
+                <div class="glass-card-green p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code text-xl text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-4">Build Website</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">High-velocity responsive cloud infrastructure coupled with modern layouts.</p>
+                    <p class="text-sm text-green-100/60 font-light leading-relaxed">High-velocity responsive cloud infrastructure coupled with modern layouts.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
-                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-network-wired text-xl text-[#D4AF37]"></i>
+                <div class="glass-card-green p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired text-xl text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-4">Tracking Workflow</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">Installing absolute operational visibility via end-to-end telemetry system pipelines.</p>
+                    <p class="text-sm text-green-100/60 font-light leading-relaxed">Installing absolute operational visibility via end-to-end telemetry system pipelines.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group reveal-element">
-                    <div class="w-12 h-12 rounded-xl bg-[#D4AF37]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-chalkboard-user text-xl text-[#D4AF37]"></i>
+                <div class="glass-card-green p-8 rounded-2xl relative overflow-hidden group reveal-element">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chalkboard-user text-xl text-green-400"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-4">Website Training</h3>
-                    <p class="text-sm text-gray-400 font-light leading-relaxed">Comprehensive knowledge transfers and professional framework mastery updates.</p>
+                    <p class="text-sm text-green-100/60 font-light leading-relaxed">Comprehensive knowledge transfers and professional framework mastery updates.</p>
                 </div>
 
             </div>
         </section>
 
         <section class="min-h-screen flex flex-col justify-center px-6 py-24 max-w-7xl mx-auto relative">
-            <div class="w-full glass-card p-8 md:p-16 rounded-3xl relative overflow-hidden reveal-element">
-                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="w-full glass-card-green p-8 md:p-16 rounded-3xl relative overflow-hidden reveal-element">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[120px] pointer-events-none"></div>
                 
                 <div class="max-w-2xl">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block mb-4">// System Administration</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-3">Eng. Kufa Kedir</h2>
-                    <p class="text-[#F3E5AB] font-medium text-sm tracking-widest mb-8 uppercase">Founder & Principal Owner</p>
-                    <p class="text-gray-400 font-light leading-relaxed mb-10">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-green-400 block mb-4">// System Administration</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-grass-title tracking-tight mb-3">Eng. Kufa Kedir</h2>
+                    <p class="text-green-300 font-medium text-sm tracking-widest mb-8 uppercase">Founder & Principal Owner</p>
+                    <p class="text-green-100/60 font-light leading-relaxed mb-10">
                         Overseeing premium technological installations, secure database implementations, and luxury cross-platform design suites.
                     </p>
                     
-                    <a href="tel:+251921101333" class="inline-flex items-center gap-4 gold-gradient hover:opacity-90 text-black text-base font-bold px-8 py-5 rounded-xl shadow-xl shadow-yellow-600/10 transition-all transform hover:-translate-y-1">
+                    <a href="tel:+251921101333" class="inline-flex items-center gap-4 grass-gradient hover:opacity-90 text-black text-base font-bold px-8 py-5 rounded-xl shadow-xl shadow-green-900/10 transition-all transform hover:-translate-y-1">
                         <i class="fa-solid fa-phone"></i> Call: +251 921 101 333
                     </a>
                 </div>
@@ -192,7 +208,7 @@
 
         <footer class="w-full max-w-7xl mx-auto px-6 py-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-light">
             <p>&copy; 2026 4k Technology. All Rights Reserved.</p>
-            <p class="tracking-widest uppercase">Engineered for Luxury Standard</p>
+            <p class="tracking-widest uppercase text-green-500/50">Engineered for Sustainable Innovation</p>
         </footer>
 
     </div>
@@ -204,7 +220,7 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        let scene, camera, renderer, goldParticles;
+        let scene, camera, renderer, particles;
         const container = document.getElementById('canvas-container');
 
         function initPerformanceLayout() {
@@ -229,15 +245,15 @@
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
             const material = new THREE.PointsMaterial({
-                color: 0xD4AF37, 
+                color: 0x94A3B8, // Starts as Metallic Silver/Steel
                 size: 0.3,
                 transparent: true,
                 opacity: 0.5,
                 blending: THREE.AdditiveBlending
             });
 
-            goldParticles = new THREE.Points(geometry, material);
-            scene.add(goldParticles);
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
 
             window.addEventListener('resize', onResizeWindow);
             document.addEventListener('mousemove', onMoveMouse);
@@ -263,7 +279,17 @@
                 const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
                 if(totalScroll > 0) {
                     const progress = (window.scrollY / totalScroll) * 100;
-                    document.getElementById('scroll-progress').style.width = `${progress}%`;
+                    const progressBar = document.getElementById('scroll-progress');
+                    progressBar.style.width = `${progress}%`;
+                    
+                    // Dynamically transition scroll bar style based on location
+                    if (window.scrollY > window.innerHeight * 0.5) {
+                        progressBar.style.background = "linear-gradient(135deg, #15803D 0%, #22C55E 100%)";
+                        particles.material.color.setHex(0x22C55E); // Particles turn grass green
+                    } else {
+                        progressBar.style.background = "linear-gradient(135deg, #475569 0%, #94A3B8 100%)";
+                        particles.material.color.setHex(0x94A3B8); // Particles turn metallic silver
+                    }
                 }
             });
 
@@ -329,8 +355,8 @@
         function animateLoop() {
             requestAnimationFrame(animateLoop);
 
-            goldParticles.rotation.x += 0.0003;
-            goldParticles.rotation.y += 0.0005;
+            particles.rotation.x += 0.0003;
+            particles.rotation.y += 0.0005;
 
             camera.position.x += (mouseX - camera.position.x) * 0.05;
             camera.position.y += (-mouseY - camera.position.y) * 0.05;
