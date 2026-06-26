@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4k Technology | Elite Engineering</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2 family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -91,14 +94,18 @@
 </head>
 <body class="text-gray-200 antialiased">
 
+    <!-- 3D Background Canvas -->
     <div id="canvas-container"></div>
 
+    <!-- Scroll Progress Bar -->
     <div class="fixed top-0 left-0 w-full h-[2px] bg-white/5 z-50">
         <div id="scroll-progress" class="h-full metallic-gradient w-0"></div>
     </div>
 
+    <!-- Layout Container -->
     <div class="relative z-10 w-full">
         
+        <!-- Floating Navigation -->
         <header class="fixed top-0 left-0 w-full z-40 px-6 py-6 border-b border-white/5 bg-black/40 backdrop-blur-xl">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <div class="flex items-center space-x-3 group cursor-pointer">
@@ -113,8 +120,10 @@
             </div>
         </header>
 
+        <!-- HERO SECTION: METALLIC ROBOT STYLE -->
         <section class="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 pt-32 max-w-7xl mx-auto gap-12 relative">
             
+            <!-- Left Side: Metallic Text Layout -->
             <div class="max-w-2xl lg:w-1/2" id="hero-text">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-medium uppercase tracking-widest mb-8">
                     <span class="w-2 h-2 rounded-full bg-slate-400 animate-ping"></span> Cybernetic System Infrastructure
@@ -122,34 +131,43 @@
                 <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-metallic-title mb-8 leading-none">
                     Next-Gen Tech.<br><span class="font-extralight italic text-slate-400">Sustainable Future.</span>
                 </h1>
-                <p class="text-lg text-slate-400 font-light max-w-xl leading-relaxed mb-10">
-                    4k Technology engineers bespoke applications, high-performance web systems, and custom workflow tracking networks built for absolute precision.
+                
+                <!-- Updated Strategy Narrative Paragraph -->
+                <p class="text-lg text-slate-300 font-normal max-w-xl leading-relaxed mb-10">
+                    By using 4K high-precision engineering to eliminate waste and build a sustainable future.
                 </p>
+                
                 <div class="flex items-center gap-3 text-sm text-slate-500 tracking-widest uppercase">
                     <span class="text-metallic-chrome font-medium">Scroll to observe transformation</span>
                     <i class="fa-solid fa-arrow-down-long animate-bounce text-slate-400"></i>
                 </div>
             </div>
 
+            <!-- Right Side: Interactive Image Frame -->
             <div class="lg:w-1/2 flex items-center justify-center relative w-full h-[450px] lg:h-[600px]" id="interactive-graphic-container">
                 <div id="rotating-frame" class="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] flex items-center justify-center">
                     
+                    <!-- Clean Background-Removed Robot Image -->
                     <img id="robot-img" src="robot.png" alt="Technology Model" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-20">
                     
+                    <!-- Clean Background-Removed Green Tree Image -->
                     <img id="tree-img" src="tree.png" alt="Sustainable Ecosystem" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10 opacity-0">
                     
+                    <!-- Luxury Decorative Ring -->
                     <div id="graphic-ring" class="absolute inset-0 border border-white/10 rounded-full scale-110 pointer-events-none transition-colors duration-500"></div>
                 </div>
             </div>
 
         </section>
 
+        <!-- CAPABILITIES SECTION: GREEN LIKE GRASS STYLE -->
         <section class="min-h-screen flex flex-col justify-center px-6 py-24 max-w-7xl mx-auto relative">
             <div class="mb-16 reveal-element">
                 <span class="text-xs font-semibold uppercase tracking-widest text-green-400 block mb-3">// Architectural Capabilities</span>
                 <h2 class="text-4xl md:text-5xl font-bold text-grass-title tracking-tight">Services Given.</h2>
             </div>
 
+            <!-- Parallax Interactive Green Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <div class="glass-card-green p-8 rounded-2xl relative overflow-hidden group reveal-element">
@@ -187,6 +205,7 @@
             </div>
         </section>
 
+        <!-- SYSTEM ADMINISTRATION: GREEN LIKE GRASS STYLE -->
         <section class="min-h-screen flex flex-col justify-center px-6 py-24 max-w-7xl mx-auto relative">
             <div class="w-full glass-card-green p-8 md:p-16 rounded-3xl relative overflow-hidden reveal-element">
                 <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -206,6 +225,7 @@
             </div>
         </section>
 
+        <!-- Footer Module -->
         <footer class="w-full max-w-7xl mx-auto px-6 py-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-light">
             <p>&copy; 2026 4k Technology. All Rights Reserved.</p>
             <p class="tracking-widest uppercase text-green-500/50">Engineered for Sustainable Innovation</p>
@@ -213,10 +233,12 @@
 
     </div>
 
+    <!-- Core Interactive Libraries (Three.js + GSAP) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
+    <!-- Engine Core Script -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
@@ -245,7 +267,7 @@
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
             const material = new THREE.PointsMaterial({
-                color: 0x94A3B8, // Starts as Metallic Silver/Steel
+                color: 0x94A3B8, // Metallic Silver
                 size: 0.3,
                 transparent: true,
                 opacity: 0.5,
@@ -282,13 +304,12 @@
                     const progressBar = document.getElementById('scroll-progress');
                     progressBar.style.width = `${progress}%`;
                     
-                    // Dynamically transition scroll bar style based on location
                     if (window.scrollY > window.innerHeight * 0.5) {
                         progressBar.style.background = "linear-gradient(135deg, #15803D 0%, #22C55E 100%)";
-                        particles.material.color.setHex(0x22C55E); // Particles turn grass green
+                        particles.material.color.setHex(0x22C55E); // Grass green
                     } else {
                         progressBar.style.background = "linear-gradient(135deg, #475569 0%, #94A3B8 100%)";
-                        particles.material.color.setHex(0x94A3B8); // Particles turn metallic silver
+                        particles.material.color.setHex(0x94A3B8); // Metallic silver
                     }
                 }
             });
