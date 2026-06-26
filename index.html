@@ -96,9 +96,9 @@
             <div class="lg:w-1/2 flex items-center justify-center relative w-full h-[450px] lg:h-[600px]" id="interactive-graphic-container">
                 <div id="rotating-frame" class="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] flex items-center justify-center">
                     
-                    <img id="robot-img" src="robot.jpg" alt="Technology Model" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-20">
+                    <img id="robot-img" src="robot.png" alt="Technology Model" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-20">
                     
-                    <img id="tree-img" src="tree.jpg" alt="Sustainable Ecosystem" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10 opacity-0">
+                    <img id="tree-img" src="tree.png" alt="Sustainable Ecosystem" class="absolute w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10 opacity-0">
                     
                     <div class="absolute inset-0 border border-[#D4AF37]/20 rounded-full scale-110 pointer-events-none"></div>
                 </div>
@@ -245,7 +245,7 @@
                 }
             });
 
-            // Controlled smooth trailing rotation on scroll
+            // Smooth slow rotation on scroll
             gsap.to("#rotating-frame", {
                 scrollTrigger: {
                     trigger: "#interactive-graphic-container",
@@ -257,7 +257,7 @@
                 ease: "none"
             });
 
-            // cross-fade transformation tracking
+            // Cross-fade animations for .png assets
             gsap.to("#robot-img", {
                 scrollTrigger: {
                     trigger: "#interactive-graphic-container",
